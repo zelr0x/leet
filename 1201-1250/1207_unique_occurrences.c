@@ -9,8 +9,8 @@
  * -1000 <= arr[i] <= 1000
  */
 
- #define SEEN_SZ 2001
- #define UQ_SZ 1001
+#define SEEN_SZ 2001
+#define UQ_SZ 1001
 
 static int16_t seen[SEEN_SZ];
 static uint16_t uq[UQ_SZ];
