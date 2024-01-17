@@ -1,7 +1,8 @@
 #include <stdint.h>
 
 /**
- * https://leetcode.com/problems/unique-number-of-occurrences
+ * Exercise: https://leetcode.com/problems/unique-number-of-occurrences
+ * Explanation: https://leetcode.com/problems/unique-number-of-occurrences/solutions/4581767/c-beats-100-o-n-time-o-1-space-no-sort-no-dynamic-allocation-no-stdlib-explained/
  *
  * Constraints:
  * 1 <= n <= 1000
