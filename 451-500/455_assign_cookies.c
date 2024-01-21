@@ -2,6 +2,9 @@
 #include <string.h>
 
 /**
+ * Exercise: https://leetcode.com/problems/assign-cookies/
+ * Explanation: https://leetcode.com/problems/assign-cookies/solutions/4605908/c-beats-100-no-input-mutation-no-dynamic-memory/
+ *
  * Constraints:
  * 1 <= g.length <= 3 * 10^4
  * 0 <= s.length <= 3 * 10^4
