@@ -40,7 +40,6 @@ static inline bracket_t *bracket_stack_pop(bracket_stack_t *stack) {
 }
 
 bool isValid(char *s) {
-    // parentheses, braces, curly braces
     bracket_stack_t stack;
     init_bracket_stack(&stack);
     char c;
