@@ -5,7 +5,9 @@ class Solution {
 public:
     bool containsNearbyDuplicate(const std::vector<int>& nums, const int k) {
         const int n = nums.size();
-        if (k < 1 || n < 2) return false;
+        if (k == 0 || n < 2) return false;
+        std::unordered_map<int, int> m;
+        m.reserve(n);
         for (int i = 0; i < n; i++) {
             const int num = nums[i];
             auto it = m.find(num);
@@ -17,6 +19,4 @@ public:
         }
         return false;
     }
-private:
-    std::unordered_map<int, int> m;
 };
