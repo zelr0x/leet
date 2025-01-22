@@ -4,9 +4,9 @@
 class Solution {
 public:
     bool containsNearbyDuplicate(const std::vector<int>& nums, const int k) {
-        int n = nums.size();
+        const int n = nums.size();
         if (k < 1 || n < 2) return false;
-        for (int i = 0; i < nums.size(); i++) {
+        for (int i = 0; i < n; i++) {
             const int num = nums[i];
             auto it = m.find(num);
             if (it != m.end()) {
