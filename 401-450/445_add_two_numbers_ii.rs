@@ -54,7 +54,7 @@ impl Solution {
             node.next = res;
             res = Some(Box::new(node));
         }
-        return res;
+        res
     }
 }
 
@@ -65,7 +65,7 @@ fn to_vec(list: Option<Box<ListNode>>) -> Vec<i32> {
         res.push(node.val);
         list = node.next;
     }
-    return res;
+    res
 }
 
 fn prepend_zeroes(v: &mut Vec<i32>, n: usize) {
