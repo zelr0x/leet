@@ -21,20 +21,19 @@ use std::cell::RefCell;
 
 impl Solution {
     pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-        if let Some(root) = root.as_ref().cloned() {
-            let mut stack = Vec::new();
-            stack.push(root);
-            while let Some(node) = stack.pop() {
-                let TreeNode { left, right , .. } = &mut *node.borrow_mut();
-                std::mem::swap(left, right);
-                if let Some(x) = left.clone() {
-                    stack.push(x);
-                }
-                if let Some(x) = right.clone() {
-                    stack.push(x);
-                }
+        let root = root?;
+        let mut stack = Vec::new();
+        stack.push(root.clone());
+        while let Some(node) = stack.pop() {
+            let TreeNode { left, right , .. } = &mut *node.borrow_mut();
+            std::mem::swap(left, right);
+            if let Some(left) = left.clone() {
+                stack.push(left);
+            }
+            if let Some(right) = right.clone() {
+                stack.push(right);
             }
         }
-        root
+        Some(root)
     }
 }
