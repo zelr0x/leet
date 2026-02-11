@@ -1,3 +1,4 @@
+// Problem: https://leetcode.com/problems/contiguous-array/description/
 func findMaxLength(nums []int) int {
     if len(nums) < 2 {
         return 0
