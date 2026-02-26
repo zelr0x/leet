@@ -30,24 +30,24 @@ func (l *MyLinkedList) Get(idx int) int {
 }
 
 func (l *MyLinkedList) AddAtHead(val int)  {
-    l.insertAfter(l.head, &node{val: val})
+    l.insertAfter(l.head, l.newNode(val))
 }
 
 func (l *MyLinkedList) AddAtTail(val int)  {
-    l.insertBefore(l.tail, &node{val: val})
+    l.insertBefore(l.tail, l.newNode(val))
 }
 
 func (l *MyLinkedList) AddAtIndex(idx int, val int)  {
     if idx < 0 || idx > l.len {
         return
     }
-    newNode := &node{val: val}
+    newNode := l.newNode(val)
     if idx == l.len {
         l.insertBefore(l.tail, newNode)
         return
     }
     n := l.nodeAtUnchecked(idx)
-    l.insertBefore(n, &node{val: val})    
+    l.insertBefore(n, newNode)    
 }
 
 func (l *MyLinkedList) DeleteAtIndex(idx int)  {
@@ -56,6 +56,10 @@ func (l *MyLinkedList) DeleteAtIndex(idx int)  {
         return
     }
     l.remove(n)
+}
+
+func (l *MyLinkedList) newNode(val int) *node {
+    return &node{val: val}
 }
 
 func (l *MyLinkedList) nodeAt(idx int) *node {
@@ -98,13 +102,3 @@ func (l *MyLinkedList) remove(n *node) {
     n.next.prev = n.prev
     l.len--
 }
-
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * obj := Constructor();
- * param_1 := obj.Get(index);
- * obj.AddAtHead(val);
- * obj.AddAtTail(val);
- * obj.AddAtIndex(index,val);
- * obj.DeleteAtIndex(index);
- */
